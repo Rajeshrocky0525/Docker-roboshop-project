@@ -59,4 +59,16 @@ services:
       - rabbitmq
       - user
       - cart
+  frontend:
+    image: joindevops/frontend:v1
+    container_name: frontend
+    depends_on:
+      - catalogue
+      - user
+      - cart
+      - shipping
+      - payment
+    ports:
+      - "80:80"
+
     
