@@ -8,8 +8,8 @@ systemctl start docker
 usermod -aG docker ec2-user
 
 growpart /dev/nvme0n1 4
-lvextend -L +20G /dev/RootVG/rootVol
-lvextend -L +10G /dev/RootVG/varVol
+lvextend -r -L +30G /dev/RootVG/varVol
+
 
 xfs_growfs /
 xfs_growfs /var
