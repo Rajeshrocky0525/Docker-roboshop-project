@@ -6,10 +6,10 @@ networks:
 
 services:
   mongodb:
-    image: joindevops/mongodb:v1
+    image: rajesh0525/mongodb:v1
     container_name: mongodb
   catalogue:
-    image: joindevops/catalogue:v1
+    image: rajesh0525/catalogue:v1
     container_name: catalogue
     depends_on:
       - mongodb
@@ -17,23 +17,23 @@ services:
     image: redis:7.0
     container_name: redis
   user:
-    image: joindevops/user:v1
+    image: rajesh0525/user:v1
     container_name: user
     depends_on:
       - mongodb
       - redis
   cart:
-    image: joindevops/cart:v1
+    image: rajesh0525/cart:v1
     container_name: cart
     depends_on:
       - catalogue
       - redis
   mysql:
-      image: joindevops/mysql:v1
+      image: rajesh0525/mysql:v1
       container_name: mysql
 
   shipping:
-    image: joindevops/shipping:v1
+    image: rajesh0525/shipping:v1
     container_name: shipping
     depends_on:
       - mysql
@@ -60,7 +60,7 @@ services:
       - user
       - cart
   frontend:
-    image: joindevops/frontend:v1
+    image: rajesh0525/frontend:v1
     container_name: frontend
     depends_on:
       - catalogue
