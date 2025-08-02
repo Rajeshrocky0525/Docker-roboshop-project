@@ -5,4 +5,4 @@ COPY requirements.txt .
 COPY  *.py .
 COPY payment.ini .
 RUN pip install -r requirements.txt
-CMD [ "uswgi", "--ini", "payment.ini"]
+CMD ["uswgi", "--ini", "payment.ini"]
