@@ -2,7 +2,7 @@ networks:
   default:
     name: roboshop
     driver: bridge
-    external: true
+    #external: true # Uncomment if you want to use an external network
 
 services:
   mongodb:
