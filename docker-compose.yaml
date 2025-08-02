@@ -42,19 +42,19 @@ services:
     image: rabbitmq:3
     container_name: rabbitmq
     environment:
-      - RABBITMQ_DEFAULT_USER: roboshop
-      - RABBITMQ_DEFAULT_PASS: roboshop123
+      RABBITMQ_DEFAULT_USER: roboshop
+      RABBITMQ_DEFAULT_PASS: roboshop123
   payment:
     image: joindevops/payment:v1
     container_name: payment
     environment:
-      - CART_HOST: CART
-      - CART_PORT: 8080
-      - USER_HOST: USER
-      - USER_PORT: 8080
-      - AMQP_HOST: rabbitmq
-      - AMQP_USER: roboshop
-      - AMQP_PASS: roboshop123
+      CART_HOST: CART
+      CART_PORT: 8080
+      USER_HOST: USER
+      USER_PORT: 8080
+      AMQP_HOST: rabbitmq
+      AMQP_USER: roboshop
+      AMQP_PASS: roboshop123
     depends_on:
       - rabbitmq
       - user
