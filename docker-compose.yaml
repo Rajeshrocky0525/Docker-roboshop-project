@@ -4,6 +4,11 @@ networks:
     driver: bridge
     #external: true # Uncomment if you want to use an external network
 
+volumes:
+  mongodb:
+  mysql:
+  redis:
+  rabbitmq:
 services:
   mongodb:
     image: rajesh0525/mongodb:v1
