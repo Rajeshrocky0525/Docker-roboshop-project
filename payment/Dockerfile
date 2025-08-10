@@ -9,7 +9,9 @@ EXPOSE 8080
 WORKDIR /opt/server
 
 RUN apk add --no-cache pcre
-RUN addgroup -S roboshop && adduser -S roboshop -G roboshop
+RUN addgroup -S roboshop && adduser -S roboshop -G roboshop 
+    
+
 USER roboshop
 COPY --from=builder /install /usr/local
 
